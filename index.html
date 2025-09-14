@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        .hero img {
+            max-width: 50%;
+            border-radius: 10px;
+        }
+
+        .hero-content {
+            max-width: 500px;
+            margin-left: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .hero-content .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-right: 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn-shop {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .btn-learn {
+            border: 2px solid #28a745;
+            color: #28a745;
+            background: none;
+        }
+         .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar ul li {
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #28a745;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        .feature-item {
+            max-width: 300px;
+        }
+
+        .feature-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: #666;
+        }
+         .info-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        .main-heading {
+            font-size: 28px;
+            font-weight: bold;
+            min-width: 300px;
+        }
+
+        .info-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .vertical-line {
+            border-left: 3px solid #4CAF50;
+            height: 120px;
+            margin-right: 10px;
+        }
+
+        .info-box {
+            max-width: 600px;
+        }
+
+        .info-box h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .latest-posts {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .latest-posts h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .latest-posts p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .posts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .post {
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .post h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .post p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .post a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .post a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+
+
+
+        .open-btn {
+            padding: 12px 24px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .modal-content ul {
+            list-style-type: decimal;
+            margin-left: 20px;
+        }
+
+        .modal-content li {
+            margin-bottom: 10px;
+        }
+
+        .modal-content strong {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+
+<body>
+ <nav class="navbar">
+        <div class="logo">Beauty Ecommerce X</div>
+        <ul>
+            <li><a href="ecomm.html">Home</a></li>
+            <li><a href="ourstory.html">Our Story</a></li>
+            <li><a href="whychooseus.html">Why Choose Us</a></li>
+            <li><a href="companyinfo.html">Company Info</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <img src="C:\Users\Windows\OneDrive\Desktop\web development\assets\image\banner.jpeg"
+            alt="Woman applying skincare">
+        <div class="hero-content">
+            <h1>Explore Unique Luxury Products</h1>
+            <p> Discover the finest collection of skincare and beauty products crafted to nourish your skin and enhance your natural glow. From rejuvenating Creams to gentle cleansers, every product is carefully selected to provide quality, safety, and luxury at affordable prices. Experience the perfect balance of science and nature for radiant skin ever day.</p>
+            <a href="#view" class="btn btn-shop">GO TO SHOP</a>
+            <a href="learnmore.html" class="btn btn-learn">LEARN MORE</a>
+        </div>
+    </section>
+
+     <section class="features">
+        <div class="feature-item">
+            <img src="C:\Users\Windows\OneDrive\Desktop\web development\assets\image\gem.png" alt="gbhnjm" height="40px">
+            <h3>Premium products</h3>
+            <p>We Only the highest quality items to ensure you get the best value. Trusted by thousands for durability, style, and performance </p>
+        </div>
+
+        <div class="feature-item">
+            <img src="C:\Users\Windows\OneDrive\Desktop\web development\assets\image\heart.png" alt="gbhnjm" height="40px">
+            <h3>+250,000 satisfied customers</h3>
+            <p> Our commitment to exceptional services and quality has earned us the loyalty of growing global community.</p>
+        </div>
+
+        <div class="feature-item">
+            <img src="C:\Users\Windows\OneDrive\Desktop\web development\assets\image\box.png" alt="gbhnjm" height="40px">
+            <h3>Free delivery over $250</h3>
+            <p> Enjoy fast, free shipping on all orders over $250. Delivered right to your door with care and efficiency.</p>
+        </div>
+    </section>
+    <hr>
+<div class="info-section">
+        <div class="main-heading">Explore Our Most Loved Categories</div>
+
+        <div class="info-content">
+            <div class="vertical-line"></div>
+
+            <div class="info-box">
+                <h3>250,000+ happy Customers</h3>
+                <p> Join a growing community to satisfied shoppers who trust us for expectational products and outstanding service. Your happiness is our top priority - and it shows.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container" id="view">
+     <div class="row">
+        <div class="col-sm-4 ">
+                <img src="C:\Users\Windows\OneDrive\Desktop\web development\assets\image\bottle.jpeg" width="100%">
+            <div class="m-3 text-center"><h4><strong>Skincare Products</strong></h4></div>
+            <div class="text-center"><p>Care for your skin with our premium creams, serums, and natural oils designed to nourish and rejuvenate every skin type.</p></div>
+            <div class="text-center"><a href="view1.html">View--></a></div>
+        </div>
+        <div class="col-sm-4">
+                <img src="C:\Users\Windows\OneDrive\Desktop\web development\assets\image\nail art.jpeg" width="100%">
+            <div class="m-3 text-center"><h4><strong>Nail Care Products</strong></h4></div>
+            <div class="text-center"><p>Get vibrant, long-lasting nails with our top-quality nail polishes, treatments, and accessories for a perfect manicure.</p></div>
+            <div class="text-center"><a href="view2.html">View--></a></div>
+        </div>
+        <div class="col-sm-4">
+                <img src="C:\Users\Windows\OneDrive\Desktop\web development\assets\image\body.jpeg" width="100%">
+               <div class="m-3 text-center"><h4><strong>Body Care Products</strong></h4></div>
+            <div class="text-center"><p>Indulge in our gentle soaps, moisturizing lotions, and body scrubs that leave your skin soft, healthy, and refreshed.</p></div>
+               <div class="text-center"><a href="view3.html">View--></a></div>
+            </div>
+     </div>
+    </div>
+    <hr>
+    <div class="text-center mt-4" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><h4>Stories by our costumers</h4></div>
+    <div class="text-center mt-5"><h1><strong>Customer Testimonials</strong></h1></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 text-center">
+                <img src="C:\Users\Windows\OneDrive\Desktop\web development\assets\image\star.webp" width="60%">
+                <p>"Excellent body care products. Gentle on my skin and very effective. I'll definitely purchase more for myself and as gift."</p>
+                 <h5><strong>Emma Wilson</strong></h5>
+                 <p style="font-size: small;"><i>Founder, Glow & Shine</i></p>
+            </div>
+             <div class="col-sm-4 text-center">
+                <img src="C:\Users\Windows\OneDrive\Desktop\web development\assets\image\star.webp" width="60%">
+                <p>"I absolutely love the products! The skincare collection has transformed my skin in just a few weeks. High quality and fast delivery. Highly recommended!"</p>
+                 <h5><strong>Liam Parker</strong></h5>
+                 <p style="font-size: small;"><i>Blogger,Beauty Insights</i></p>
+            </div>
+             <div class="col-sm-4 text-center">
+                <img src="C:\Users\Windows\OneDrive\Desktop\web development\assets\image\star.webp" width="60%">
+                <p>"The nail care product are amazing. Beautiful color and long-lasting effects. Customer service is super friendly too."</p>
+                <h5><strong>Olivia Martin</strong></h5>
+                <p style="font-size: small;"><i>Freelance Writer, Wellness Today</i></p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="latest-posts">
+        <h2>Read Our Latest Posts</h2>
+        <p>Stay updated with the latest trends, beauty tips, and product reviews from our experts.</p>
+    </div>
+
+    <div class="posts-container">
+
+        <div class="post">
+            <h3>Top 5 Skincare Tips for Glowing Skin in 2025</h3>
+            <p>Discover expert advice on keeping your skin radiant and healthy all year round. Learn about the best products, daily habits, and expert tricks.</p>
+       <button class="open-btn" onclick="openModal()">👉 Read More</button>
+            <div class="modal" id="popupModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">X</span>
+            <h2> Top 5 skin care tips for glowing skin in 2025 </h2>
+            <p> Keeping your skin healthy and glowing is easier than you think. In this article we will share 5 expert skin care tips for 2025 that really work:</p>
+            <ul>
+                <li><strong> Stay Hydrated </strong> - Drinking enough water daily keeps your skin plump and clear.</li>
+                <li><strong> Use Sunscreen </strong> - Apply SPF 30+ everyday even when cloudy to prevent premature aging.</li>
+                <li><strong> Cleanse Gently </strong> - Avoid harsh scrubbing; use mild cleaners suited for your skin type.</li>
+                <li><strong> Moisturize Smartly </strong> - Choose moisturizers Based on your skin type- Oiling, dry, or sensitive.</li>
+                <li><strong> Healthy Diet </strong> - Incorporate foods rich in antioxidants like berries, nuts and green tea.</li>
+            </ul>
+            <p> Follow these tips consistently, And you'll notice a radiant healthy glow in no time.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('popupModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('popupModal').style.display = 'none';
+        }
+    </script>
+        </div>
+
+        <div class="post">
+            <h3>Must-Have Beauty Products This Season</h3>
+            <p>We,ve curated the hottest beauty products that everyone's talking about. Find out which makeup, skincare, and wellness items you should grab now.</p>
+             <button class="open-btn" onclick="openModal()">👉 Read More</button>
+            <div class="modal" id="popupModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">X</span>
+            <h2> Must have beauty products this season </h2>
+            <p> This season the beauty world is buzzing with innovative products you need to try:</p>
+            <ul>
+            <li><strong> Hydrating Face Mist </strong> - Keeps your skin fresh throughout the day </li>
+                <li><strong> Long Lasting Lip Tint </strong> -  Vibrant shades that stay for hours without drying your lips.</li>
+                <li><strong> Organic facial oil </strong> - Nourishes deeply for a natural glow.</li>
+                <li><strong> Multi-purpose Balm</strong> - works as a lip balm highlighter and cuticle care.</li>
+            </ul>
+            <p> Explore our full collection and discover why these are trending much-haves.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('popupModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('popupModal').style.display = 'none';
+        }
+    </script>
+        </div>
+
+        <div class="post">
+            <h3>How to Choose the Perfect Moisturizer for Your Skin Type</h3>
+            <p>Confused about which moisturizer suits you best? Our in-depth guide helps you pick the perfect one depending on your skin type and needs.</p>
+            <button class="open-btn" onclick="openModal()">👉 Read More</button>
+            <div class="modal" id="popupModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">X</span>
+            <h2> How to Choose the Perfect Moisturiser for Your Skin Type/h2>
+            <p> Choosing the right moisturiser depends on your skin type:</p>
+            <ul>
+                <li><strong> Oily Skin </strong> - Lightweight, Oil-free Gel based Moisturisers.</li>
+                <li><strong> Dry Skin </strong> - Rich, emollient cream that lock in moisture.</li>
+                <li><strong>Sensitive Skin</strong> - Hypoallergenic, fragrance-free options.</li>
+                <li><strong>Combination Skin</strong> - Balancing formulas that hydrate dry area without clogging pores.</li>
+            </ul>
+            <p> Read our full guidance with product recommendations and tips for applying the right moisturiser at the right time.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal( ) {
+            document.getElementById('popupModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('popupModal').style.display = 'none';
+        }
+    </script>
+        </div>
+
+    </div>
+
+        <div class="footer">
+        <p>&copy; 2025 Beauty Ecommerce X. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact Us</a>
+        </p>
+    </div>
+</body>
+
+</html>
